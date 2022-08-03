@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "scripts": {
+    "web:dev": "next",
+    "web:build": "next build",
+    "web:local": "next start",
+    "mobile:dev": "expo start"
+  },
+  "dependencies": {
+    "expo": "~45.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^9.0.0",
+    "next": "12.2.2",
+    "next-compose-plugins": "^2.2.1",
+    "next-fonts": "^1.5.1",
+    "next-optimized-images": "^2.6.2",
+    "next-transpile-modules": "^9.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-native": "0.68.2",
+    "react-native-web": "0.17.7",
+    "setimmediate": "~1.0.5",
+    "svg-sprite-loader": "^6.0.11",
+    "webp-loader": "^0.6.0"
+  },
+  "devDependencies": {
+    "@expo/next-adapter": "3.1.20"
+  }
+}
