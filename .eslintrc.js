@@ -26,6 +26,9 @@ module.exports = {
     "import/resolver": {
       typescript: {},
     },
+    react: {
+      version: "detect",
+    },
   },
   ignorePatterns: ["next-env.d.ts", "next.config.js"],
 };
