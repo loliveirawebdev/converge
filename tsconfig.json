@@ -7,12 +7,10 @@
     "jsx": "preserve",
     "experimentalDecorators": true,
     "incremental": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": { "~/*": ["./*"] }
   },
   "extends": "expo/tsconfig.base",
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
