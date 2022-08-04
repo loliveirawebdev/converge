@@ -1,6 +1,9 @@
-import { Children } from 'react'
+import React, { Children } from 'react'
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
 import { AppRegistry } from 'react-native'
+
+// avoid typescript error
+const CustomAppRegistry = AppRegistry as any
 
 /** "RESET" styles for web */
 export const style = `
@@ -44,8 +47,8 @@ body {
 `;
 
 export async function getInitialProps({ renderPage }) {
-  AppRegistry.registerComponent('Main', () => Main);
-  const { getStyleElement } = AppRegistry.getApplication('Main');
+  CustomAppRegistry.registerComponent('Main', () => Main);
+  const { getStyleElement } = CustomAppRegistry.getApplication('Main');
   const page = await renderPage();
   const styles = [<style dangerouslySetInnerHTML={{ __html: style }} />, getStyleElement()];
   return { ...page, styles: Children.toArray(styles) };

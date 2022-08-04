@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>FALA CHEFIAxsdfsfsd</Text>
+      <Text style={styles.text}>ssskoko</Text>
     </View>
   )
 }
