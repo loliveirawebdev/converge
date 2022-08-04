@@ -1,9 +1,9 @@
-import React, { Children } from 'react'
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import { AppRegistry } from 'react-native'
+import React, { Children } from "react";
+import NextDocument, { Html, Head, Main, NextScript } from "next/document";
+import { AppRegistry } from "react-native";
 
 // avoid typescript error
-const CustomAppRegistry = AppRegistry as any
+const CustomAppRegistry = AppRegistry as any;
 
 /** "RESET" styles for web */
 export const style = `
@@ -47,11 +47,17 @@ body {
 `;
 
 export async function getInitialProps({ renderPage }) {
-  CustomAppRegistry.registerComponent('Main', () => Main);
-  const { getStyleElement } = CustomAppRegistry.getApplication('Main');
+  CustomAppRegistry.registerComponent("Main", () => Main);
+  const { getStyleElement } = CustomAppRegistry.getApplication("Main");
   const page = await renderPage();
-  const styles = [<style dangerouslySetInnerHTML={{ __html: style }} />, getStyleElement()];
-  return { ...page, styles: Children.toArray(styles) };
+
+  return {
+    ...page,
+    styles: Children.toArray([
+      <style key="style" dangerouslySetInnerHTML={{ __html: style }} />,
+      getStyleElement(),
+    ]),
+  };
 }
 
 class Document extends NextDocument {

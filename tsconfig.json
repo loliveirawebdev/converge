@@ -6,7 +6,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "experimentalDecorators": true,
-    "incremental": true
+    "incremental": true,
+    "allowSyntheticDefaultImports": true
   },
   "extends": "expo/tsconfig.base",
   "include": [
