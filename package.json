@@ -4,7 +4,8 @@
     "web:dev": "next",
     "web:build": "next build",
     "web:local": "next start",
-    "mobile:dev": "expo start"
+    "mobile:dev": "expo start",
+    "postinstall": "npx lefthook install"
   },
   "dependencies": {
     "expo": "~45.0.0",
@@ -25,6 +26,7 @@
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
+    "@evilmartians/lefthook": "^1.0.5",
     "@expo/next-adapter": "3.1.20",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.67.6",
