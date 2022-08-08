@@ -9,7 +9,7 @@
     "incremental": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "paths": { "~/*": ["./*"] },
+    "paths": { "@/*": ["./*"] },
     "noImplicitAny": false
   },
   "extends": "expo/tsconfig.base",
