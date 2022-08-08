@@ -9,3 +9,5 @@ pre-push:
   commands:
     type-checking:
       run: npx tsc --noEmit
+    tests:
+      run: npx jest
