@@ -10,7 +10,7 @@ pre-push:
     type-checking:
       run: npx tsc --noEmit
     tests:
-      run: npx jest
+      run: npx jest --passWithNoTests
 
 commit-msg:
   commands:
