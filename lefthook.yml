@@ -11,3 +11,8 @@ pre-push:
       run: npx tsc --noEmit
     tests:
       run: npx jest
+
+commit-msg:
+  commands:
+    lint-commit-msg:
+      run: npx commitlint --edit
