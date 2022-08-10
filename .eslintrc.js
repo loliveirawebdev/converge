@@ -24,6 +24,14 @@ module.exports = {
     "react/prop-types": "off",
     "@typescript-eslint/no-unused-vars": "error",
   },
+  overrides: [
+    {
+      files: ["*.js"],
+      rules: {
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+  ],
   settings: {
     "import/resolver": {
       typescript: {},
