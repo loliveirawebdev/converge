@@ -4,17 +4,12 @@ import {
 } from "../../types/NavigationHelper";
 
 import { NextRouter, useRouter } from "next/router";
-import { RoutesDefinition } from "../../definitions";
+import { RoutesDefinition } from "../../config/routes";
 
 function navigate(router: NextRouter): NavigateFunction {
   return function (params) {
     const { to, query } = params;
     const routeName = RoutesDefinition.find((route) => route.name === to);
-
-    if (!routeName) {
-      throw new Error(`[navigate] can't find any route named ${to}`);
-    }
-
     router.push({ pathname: routeName.url, query });
   };
 }
