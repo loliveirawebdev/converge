@@ -37,3 +37,12 @@ next-env.d.ts
 
 # expo related
 .expo
+
+# nextjs pages
+/pages/*
+!/pages/README.md
+!/pages/_app.tsx
+!/pages/_document.tsx
+
+# modules instances
+/modules/instances.ts
