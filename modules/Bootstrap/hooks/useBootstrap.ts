@@ -7,7 +7,7 @@ export function useBootstrap() {
   const navigation = useNavigation();
 
   const run = async () => {
-    const { flow, onErrorRoutine } = flowConfig;
+    const { flow, onErrorRoutine } = flowConfig as any;
     const ctx = { navigation };
 
     try {
