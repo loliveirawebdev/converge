@@ -1,12 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "web:dev": "next",
-    "web:build": "next build",
     "web:local": "next start",
-    "mobile:dev": "expo start",
     "postinstall": "npx lefthook install",
-    "storybook": "npx start-storybook -p 6006"
+    "storybook": "npx start-storybook -p 6006",
+    "web:dev": "yarn file:generation && next",
+    "web:build": "yarn file:generation && next build",
+    "mobile:dev": "yarn file:generation && expo start",
+    "file:generation": "yarn generate:webroute:files && yarn generate:module:instances",
+    "generate:webroute:files": "npx ts-node ./modules/Routing/scripts/generateWebRoutes.ts",
+    "generate:module:instances": "npx ts-node ./modules/Routing/scripts/instantiateMobileModules.ts"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.11",
