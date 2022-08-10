@@ -12,6 +12,10 @@
     "paths": { "@/*": ["./*"] },
     "noImplicitAny": false
   },
+  "ts-node": {
+    "files": true,
+    "compilerOptions": { "module": "commonjs" }
+  },
   "extends": "expo/tsconfig.base",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
