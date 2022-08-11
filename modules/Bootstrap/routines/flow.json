@@ -1,4 +1,4 @@
 {
-  "flow": ["health", "moveForward"],
+  "flow": ["moveForward"],
   "onErrorRoutine": "onError"
 }
