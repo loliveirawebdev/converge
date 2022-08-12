@@ -23,9 +23,9 @@ const instances = RoutesDefinition.map(({ name }) => {
   return replaceArg(template, name);
 });
 
-const fileTemplate = `
-  ${imports.join(";\r\n")}
-  export const ModuleInstances = [${instances.join(",")}];
-`;
+const instructions = [
+  imports.join(";"),
+  `export const ModuleInstances = [${instances.join(",")}];`,
+];
 
-fs.writeFileSync("./modules/instances.ts", fileTemplate);
+fs.writeFileSync("./modules/instances.ts", instructions.join(";"));
