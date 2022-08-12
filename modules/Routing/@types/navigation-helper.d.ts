@@ -1,7 +1,7 @@
 declare namespace Routing {
   type NavigateParams = {
     to: string;
-    query?: NodeJS.Dict<string | string[]>;
+    query?: string | string[];
     reset?: boolean;
   };
 
