@@ -5,7 +5,7 @@ function navigate(router: NextRouter): Routing.NavigateFunction {
   return function (params) {
     const { to, query } = params;
     const routeName = RoutesDefinition.find((route) => route.name === to);
-    router.push({ pathname: routeName.url, query });
+    router.push({ pathname: routeName.url, query: query as any });
   };
 }
 
