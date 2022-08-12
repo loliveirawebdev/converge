@@ -1,15 +1,14 @@
 import React from "react";
-import { Props } from "./@types/system-props";
 import { useMobileRoutes } from "./hooks/useMobileRoutes";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 
-export function RoutingSystem(props: Props) {
+export function RoutingSystem() {
   const { initialRoute, routes } = useMobileRoutes(Stack);
 
   return (
-    <NavigationContainer onReady={props.onReady}>
+    <NavigationContainer>
       <Stack.Navigator initialRouteName={initialRoute}>
         {routes}
       </Stack.Navigator>
