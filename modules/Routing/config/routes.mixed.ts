@@ -1,4 +1,4 @@
-export const MixedRoutes: Route[] = [
+export const MixedRoutes: Routing.Route[] = [
   {
     url: "/",
     index: true,

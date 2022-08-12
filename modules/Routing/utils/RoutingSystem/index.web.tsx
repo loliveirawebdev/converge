@@ -1,5 +1,5 @@
 import React from "react";
-import { Props } from "./interface";
+import { Props } from "./@types/system-props";
 
 // we do not need any extra functionality to handle
 // navigation for web. the specification provided by nextjs must be

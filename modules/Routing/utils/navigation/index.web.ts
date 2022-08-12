@@ -1,12 +1,7 @@
-import {
-  NavigateFunction,
-  NavigationHelper,
-} from "../../types/NavigationHelper";
-
 import { NextRouter, useRouter } from "next/router";
 import { RoutesDefinition } from "../../config/routes";
 
-function navigate(router: NextRouter): NavigateFunction {
+function navigate(router: NextRouter): Routing.NavigateFunction {
   return function (params) {
     const { to, query } = params;
     const routeName = RoutesDefinition.find((route) => route.name === to);
@@ -14,7 +9,7 @@ function navigate(router: NextRouter): NavigateFunction {
   };
 }
 
-export function useNavigation(): NavigationHelper {
+export function useNavigation(): Routing.NavigationHelper {
   const router = useRouter();
 
   return {

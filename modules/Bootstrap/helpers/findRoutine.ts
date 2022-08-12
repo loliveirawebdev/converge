@@ -1,4 +1,4 @@
-export function findRoutine(routines: Routine[], name: string) {
+export function findRoutine(routines: Bootstrap.Routine[], name: string) {
   const routine = routines.find((routine) => routine.name === name);
 
   if (!routine) {

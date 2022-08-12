@@ -1,1 +1,1 @@
-export const WebRoutes: Route[] = [];
+export const WebRoutes: Routing.Route[] = [];

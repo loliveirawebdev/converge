@@ -1,1 +1,1 @@
-export const MobileRoutes: Route[] = [];
+export const MobileRoutes: Routing.Route[] = [];

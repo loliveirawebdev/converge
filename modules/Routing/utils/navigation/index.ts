@@ -1,16 +1,11 @@
 import {
-  NavigateFunction,
-  NavigationHelper,
-} from "../../types/NavigationHelper";
-
-import {
   useNavigation as useNativeNavigation,
   NavigationProp,
   CommonActions,
   useRoute,
 } from "@react-navigation/native";
 
-function navigate(navigation: NavigationProp<any>): NavigateFunction {
+function navigate(navigation: NavigationProp<any>): Routing.NavigateFunction {
   return function (params) {
     const { to, query, reset } = params;
     const newRoute = { name: to, params: { query } };
@@ -26,7 +21,7 @@ function navigate(navigation: NavigationProp<any>): NavigateFunction {
   };
 }
 
-export function useNavigation(): NavigationHelper {
+export function useNavigation(): Routing.NavigationHelper {
   const navigation = useNativeNavigation();
   const route = useRoute<any>();
 

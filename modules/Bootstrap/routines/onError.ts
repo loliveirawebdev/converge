@@ -1,4 +1,4 @@
-const routine: Routine = {
+const routine: Bootstrap.Routine = {
   name: "onError",
   action: (context) => {
     const { navigation } = context;

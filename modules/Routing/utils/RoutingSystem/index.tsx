@@ -1,5 +1,5 @@
 import React from "react";
-import { Props } from "./interface";
+import { Props } from "./@types/system-props";
 import { useMobileRoutes } from "./hooks/useMobileRoutes";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";

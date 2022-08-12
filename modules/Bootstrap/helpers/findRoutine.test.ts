@@ -1,6 +1,6 @@
 import { findRoutine } from "./findRoutine";
-const routine: Routine = { name: "test1", action: () => null };
-const routines: Routine[] = [routine];
+const routine: Bootstrap.Routine = { name: "test1", action: () => null };
+const routines: Bootstrap.Routine[] = [routine];
 
 test("if it throws an error when a routine is not found", () => {
   const test = () => findRoutine(routines, "WRONG_NAME");
