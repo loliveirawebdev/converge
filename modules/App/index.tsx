@@ -1,6 +1,11 @@
 import React from "react";
-import { RoutingSystem } from "@/modules/Routing/components/RoutingSystem";
+import GlobalState from "@/modules/GlobalState/contexts/GlobalState";
+import RoutingSystem from "@/modules/Routing/components/RoutingSystem";
 
 export default function App() {
-  return <RoutingSystem />;
+  return (
+    <GlobalState>
+      <RoutingSystem />
+    </GlobalState>
+  );
 }
