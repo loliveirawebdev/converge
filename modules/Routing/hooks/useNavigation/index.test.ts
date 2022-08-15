@@ -52,13 +52,13 @@ test("if navigate is triggering native navigate method", () => {
   const { navigate } = result.current;
 
   navigate({ to: "Foo" });
-  navigate({ to: "Bar", query: "1" });
-  navigate({ to: "Bat", query: ["2", "3"] });
+  navigate({ to: "Bar", query: { q: "1" } });
+  navigate({ to: "Bat", query: { q: ["2"] } });
   navigate({ to: "Baz", reset: true });
 
   const expectedFooRoute = { name: "Foo", params: { query: undefined } };
-  const expectedBarRoute = { name: "Bar", params: { query: "1" } };
-  const expectedBatRoute = { name: "Bat", params: { query: ["2", "3"] } };
+  const expectedBarRoute = { name: "Bar", params: { query: { q: "1" } } };
+  const expectedBatRoute = { name: "Bat", params: { query: { q: ["2"] } } };
   const expectedBazRoute = { name: "Baz", params: { query: undefined } };
   const expectedBazReset = { index: 1, routes: [expectedBazRoute] };
 

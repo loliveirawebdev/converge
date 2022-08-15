@@ -51,13 +51,13 @@ test("if navigate is triggering native navigate method", () => {
   const { navigate } = result.current;
 
   navigate({ to: "Foo" });
-  navigate({ to: "Foo", query: "1" });
-  navigate({ to: "Foo", query: ["2", "3"] });
+  navigate({ to: "Foo", query: { q: "1" } });
+  navigate({ to: "Foo", query: { q: ["2"] } });
   navigate({ to: "Foo", reset: true });
 
   const fstExampleExpectation = { pathname: "/foo", query: undefined };
-  const secExampleExpectation = { pathname: "/foo", query: "1" };
-  const thdExampleExpectation = { pathname: "/foo", query: ["2", "3"] };
+  const secExampleExpectation = { pathname: "/foo", query: { q: "1" } };
+  const thdExampleExpectation = { pathname: "/foo", query: { q: ["2"] } };
   const fthExampleExpectation = { pathname: "/foo", query: undefined };
 
   const router = useRouter();
