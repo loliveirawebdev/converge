@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 
-export function RoutingSystem() {
+export default function RoutingSystem() {
   const { initialRoute, routes } = useMobileRoutes(Stack);
 
   return (
