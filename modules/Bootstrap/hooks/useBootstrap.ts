@@ -1,7 +1,7 @@
 import routines from "../routines";
 import flowConfig from "../routines/flow.json";
-import { findRoutine } from "../helpers/findRoutine";
 import { useNavigation } from "@/modules/Routing";
+import { findRoutine } from "../helpers/findRoutine";
 
 export function useBootstrap() {
   const navigation = useNavigation();

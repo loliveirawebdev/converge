@@ -1,15 +1,15 @@
-import { ModuleInstances } from "@/modules/instances";
+import { ModulesInstances } from "@/modules/instances";
 import { getModuleByName } from "./getModuleByName";
 
 jest.mock("@/modules/instances", () => ({
-  ModuleInstances: [{ name: "Foo", module: jest.fn() }],
+  ModulesInstances: [{ name: "Foo", module: jest.fn() }],
 }));
 
 test("if is returning the right module", () => {
   const module = getModuleByName("Foo");
   module();
 
-  const { module: fooModule } = ModuleInstances[0];
+  const { module: fooModule } = ModulesInstances[0];
   expect(fooModule).toBeCalled();
 });
 

@@ -8,7 +8,7 @@ declare namespace Routing {
   type NavigateFunction = (params: NavigateParams) => void;
 
   type NavigationHelper = {
-    route: { name: string; query?: NodeJS.Dict<string | string[]> };
+    route: { name: string; query?: string | string[] };
     navigate: NavigateFunction;
     back: () => void;
   };

@@ -1,9 +1,9 @@
 import React from "react";
 import Bootstrap from "./index";
-import { useBootstrap } from "./hooks/useBootstrap";
+import { useBootstrap } from "../../hooks/useBootstrap";
 import { create, act } from "react-test-renderer";
 
-jest.mock("./hooks/useBootstrap.ts", () => {
+jest.mock("../../hooks/useBootstrap.ts", () => {
   const useBootstrap = jest.fn().mockReturnValue({
     __esModule: true,
     run: jest.fn(),

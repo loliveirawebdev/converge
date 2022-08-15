@@ -40,7 +40,9 @@ test("if generate files correctly", () => {
 
   const instructions = [
     imports.join(";"),
-    `export const ModuleInstances = [${instances.join(",")}];`,
+    `export const ModulesInstances: ModulesInstances = [${instances.join(
+      ","
+    )}];`,
   ];
 
   require("./instantiateMobileModules");
