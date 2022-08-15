@@ -10,7 +10,8 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": { "@/*": ["./*"] },
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "useDefineForClassFields": true
   },
   "ts-node": {
     "files": true,
