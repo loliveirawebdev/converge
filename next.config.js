@@ -23,6 +23,11 @@ const plugins = [
 
 const nextConfig = {
   webpack5: true,
+  i18n: {
+    locales: ["en-US", "pt-BR"],
+    localeDetection: false,
+    defaultLocale: "en-US",
+  },
 };
 
 module.exports = withPlugins(plugins, nextConfig);
