@@ -1,6 +1,9 @@
-// https://mobx.js.org/defining-data-stores.html#combining-multiple-stores
+import { LocalizationStore } from "./LocalizationStore";
+
 export class RootStore {
+  localizationStore: LocalizationStore;
+
   constructor(context: GlobalState.StoreContext) {
-    context;
+    this.localizationStore = new LocalizationStore(context);
   }
 }
