@@ -3,6 +3,13 @@ import React from "react";
 import { create } from "react-test-renderer";
 const MockChildren = () => null;
 
+jest.mock("@/modules/Localization", () => {
+  return {
+    __esModule: true,
+    useLocale: jest.fn(),
+  };
+});
+
 jest.mock("../../stores/RootStore", () => {
   return {
     __esModule: true,
@@ -21,7 +28,7 @@ test("if RootStore is being set in context", async () => {
 
   // check if createContext is using RootStore
   expect(React.createContext).toBeCalledTimes(1);
-  expect(React.createContext).toBeCalledWith({ mock: true });
+  expect(React.createContext).toBeCalledWith(null);
 
   // set RootStore to Provider Value, without children in this example
   expect(Provider).toBeCalledWith({ value: { mock: true } }, {});

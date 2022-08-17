@@ -1,10 +1,13 @@
 import React from "react";
+import { useLocale } from "@/modules/Localization";
 import { RootStore } from "../../stores/RootStore";
 
-const rootStore = new RootStore();
-export const GlobalState = React.createContext<RootStore>(rootStore);
+export const GlobalState = React.createContext<RootStore>(null);
 
 export default function GlobalStateCtx(props: any) {
+  const locale = useLocale();
+  const rootStore = new RootStore({ locale });
+
   return (
     <GlobalState.Provider value={rootStore}>
       {props?.children}
