@@ -76,6 +76,9 @@
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
   },
+  "resolutions": {
+    "@types/react": "~17.0.21"
+  },
   "jest": {
     "preset": "jest-expo",
     "transformIgnorePatterns": [
