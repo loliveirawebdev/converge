@@ -22,6 +22,7 @@
     "intl": "^1.2.5",
     "mobx": "^6.6.1",
     "mobx-react": "^7.5.2",
+    "moment": "^2.29.4",
     "next": "12.2.2",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
