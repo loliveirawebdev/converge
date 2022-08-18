@@ -6,13 +6,21 @@ export const AvailableLocales: Localization.AvailableLocales = {
   BRAZILIAN_PORTUGUESE: ["pt", "pt-BR"],
 };
 
-export const LocalizationMessages: Localization.LocalizationDefinitions = [
+export const LocalizationDefinitions: Localization.LocalizationDefinitions = [
   {
     keys: AvailableLocales.ENGLISH,
     messages: en,
+    masks: {
+      currency: "$",
+      date: "M/DD/YYYY",
+    },
   },
   {
     keys: AvailableLocales.BRAZILIAN_PORTUGUESE,
     messages: ptBR,
+    masks: {
+      currency: "R$",
+      date: "DD/MM/YYYY",
+    },
   },
 ];
