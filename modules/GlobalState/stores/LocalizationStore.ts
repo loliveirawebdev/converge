@@ -1,6 +1,8 @@
 import { MessageFormatElement } from "react-intl";
 import { action, makeObservable, observable } from "mobx";
-import { LocalizationMessages } from "@/modules/Localization";
+
+// deep import to avoid require cycle warning
+import { LocalizationDefinitions } from "@/modules/Localization/config";
 
 export class LocalizationStore {
   locale: string;
@@ -24,14 +26,14 @@ export class LocalizationStore {
    * Load all messages in memory
    */
   loadMessages() {
-    if (!LocalizationMessages.length) {
+    if (!LocalizationDefinitions.length) {
       const msg = "[LocalizationStore] no Localization messages defined";
       throw new Error(msg);
     }
 
     try {
       const findDefinitionRule = (def) => def.keys.includes(this.locale);
-      const localizationDef = LocalizationMessages.find(findDefinitionRule);
+      const localizationDef = LocalizationDefinitions.find(findDefinitionRule);
 
       if (!localizationDef) {
         const msg = `[LocalizationStore] cannot load messages for locale: ${this.locale}`;
@@ -40,7 +42,7 @@ export class LocalizationStore {
 
       this.messages = localizationDef.messages;
     } catch (err) {
-      const anyDefinition = LocalizationMessages[0];
+      const anyDefinition = LocalizationDefinitions[0];
       this.messages = anyDefinition.messages;
     }
   }

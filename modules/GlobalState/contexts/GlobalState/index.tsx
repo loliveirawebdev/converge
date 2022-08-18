@@ -1,6 +1,8 @@
 import React from "react";
-import { useLocale } from "@/modules/Localization";
 import { RootStore } from "../../stores/RootStore";
+
+// deep import to avoid require cycle warning
+import { useLocale } from "@/modules/Localization/hooks/useLocale";
 
 export const GlobalState = React.createContext<RootStore>(null);
 

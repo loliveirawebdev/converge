@@ -15,8 +15,8 @@ jest.mock("mobx", () => {
 });
 
 test("if is loading messages correctly", () => {
-  jest.mock("@/modules/Localization", () => ({
-    LocalizationMessages: [mockEnglish],
+  jest.mock("@/modules/Localization/config", () => ({
+    LocalizationDefinitions: [mockEnglish],
   }));
 
   const { LocalizationStore } = require("./LocalizationStore");
@@ -27,8 +27,8 @@ test("if is loading messages correctly", () => {
 });
 
 test("if is changing locale correctly", () => {
-  jest.mock("@/modules/Localization", () => ({
-    LocalizationMessages: [mockEnglish, mockPortuguese],
+  jest.mock("@/modules/Localization/config", () => ({
+    LocalizationDefinitions: [mockEnglish, mockPortuguese],
   }));
 
   const { LocalizationStore } = require("./LocalizationStore");
@@ -44,8 +44,8 @@ test("if is changing locale correctly", () => {
 });
 
 test("if is default is being loaded when locale is invalid", () => {
-  jest.mock("@/modules/Localization", () => ({
-    LocalizationMessages: [mockEnglish, mockPortuguese],
+  jest.mock("@/modules/Localization/config", () => ({
+    LocalizationDefinitions: [mockEnglish, mockPortuguese],
   }));
 
   const { LocalizationStore } = require("./LocalizationStore");
@@ -56,7 +56,9 @@ test("if is default is being loaded when locale is invalid", () => {
 });
 
 test("if is store will crash if messages is not configured", () => {
-  jest.mock("@/modules/Localization", () => ({ LocalizationMessages: [] }));
+  jest.mock("@/modules/Localization/config", () => ({
+    LocalizationDefinitions: [],
+  }));
 
   const { LocalizationStore } = require("./LocalizationStore");
   const test = () => new LocalizationStore({ locale: "ch" });
