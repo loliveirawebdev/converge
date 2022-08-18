@@ -1,8 +1,9 @@
 import React from "react";
+import { observer } from "mobx-react";
 import { IntlProvider } from "react-intl";
 import { useGlobalState } from "@/modules/GlobalState";
 
-export default function LocalizationService(props: any) {
+const LocalizationService = (props: any) => {
   const { localizationStore } = useGlobalState();
   const { locale, messages } = localizationStore;
 
@@ -11,4 +12,6 @@ export default function LocalizationService(props: any) {
       {props.children}
     </IntlProvider>
   );
-}
+};
+
+export default observer(LocalizationService);
