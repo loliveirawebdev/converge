@@ -1,7 +1,6 @@
 {
   "private": true,
   "scripts": {
-    "web:local": "next start",
     "postinstall": "npx lefthook install",
     "storybook": "npx start-storybook -p 6006",
     "web:dev": "yarn file:generation && next dev",
@@ -72,10 +71,14 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-storybook": "^0.6.3",
+    "expo-cli": "^6.0.5",
+    "expo-community-flipper": "^46.0.0",
     "jest": "^26.6.3",
     "jest-expo": "^46.0.1",
+    "mobx-flipper": "^1.2.3",
     "prettier": "^2.7.1",
     "react-devtools": "^4.25.0",
+    "react-native-flipper": "^0.161.0",
     "react-test-renderer": "17",
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4"

@@ -1,0 +1,7 @@
+{
+  "expo": {
+    "name": "Converge",
+    "slug": "converge",
+    "plugins": ["expo-community-flipper"]
+  }
+}
