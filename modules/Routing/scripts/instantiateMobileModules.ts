@@ -24,6 +24,7 @@ const instances = RoutesDefinition.map(({ name }) => {
 });
 
 const instructions = [
+  "/* istanbul ignore file */",
   imports.join(";"),
   `export const ModulesInstances: ModulesInstances = [${instances.join(",")}];`,
 ];
