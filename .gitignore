@@ -46,3 +46,7 @@ next-env.d.ts
 
 # modules instances
 /modules/instances.ts
+
+# environment
+environment.dev.ts
+environment.prod.ts
