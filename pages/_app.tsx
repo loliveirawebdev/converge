@@ -1,3 +1,4 @@
+import "raf/polyfill";
 import "setimmediate";
 import React from "react";
 import App from "@/modules/App";

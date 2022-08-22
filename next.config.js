@@ -6,6 +6,9 @@ const MODULES_TO_TRANSPILE = [
   "imagemin-svgo",
   "svg-sprite-loader",
   "webp-loader",
+  "moti",
+  "@motify/core",
+  "@motify/components",
 ];
 
 const { withExpo } = require("@expo/next-adapter");
