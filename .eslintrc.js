@@ -23,6 +23,7 @@ module.exports = {
     "require-jsdoc": 0,
     "react/prop-types": "off",
     "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "off",
   },
   overrides: [
     {
