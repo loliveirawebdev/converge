@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const mockDev: Environment = { ReactotronEnabled: true };
-const mockProd: Environment = { ReactotronEnabled: false };
+const mockDev = { ReactotronEnabled: true };
+const mockProd = { ReactotronEnabled: false };
 jest.mock("./environment.dev", () => ({ Environment: mockDev }));
 jest.mock("./environment.prod", () => ({ Environment: mockProd }));
 
