@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import en from "./translations/en.json";
 import ptBR from "./translations/pt-BR.json";
 
