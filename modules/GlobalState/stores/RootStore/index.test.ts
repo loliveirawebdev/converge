@@ -1,4 +1,4 @@
-import { RootStore } from "./RootStore";
+import { RootStore } from "./index";
 
 const CONTEXT: GlobalState.StoreContext = {
   locale: "en",
@@ -14,7 +14,7 @@ class MockStore {
 
 const mockLocalizationStore = new MockStore("LOCALIZATION_STORE");
 
-jest.mock("./LocalizationStore", () => ({
+jest.mock("../LocalizationStore", () => ({
   LocalizationStore: () => mockLocalizationStore,
 }));
 

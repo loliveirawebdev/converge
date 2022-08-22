@@ -19,7 +19,7 @@ test("if is loading messages correctly", () => {
     LocalizationDefinitions: [mockEnglish],
   }));
 
-  const { LocalizationStore } = require("./LocalizationStore");
+  const { LocalizationStore } = require("./index");
   const store = new LocalizationStore({ locale: "en" });
 
   expect(store.locale).toBe("en");
@@ -31,7 +31,7 @@ test("if is changing locale correctly", () => {
     LocalizationDefinitions: [mockEnglish, mockPortuguese],
   }));
 
-  const { LocalizationStore } = require("./LocalizationStore");
+  const { LocalizationStore } = require("./index");
   const store = new LocalizationStore({ locale: "en" });
 
   expect(store.locale).toBe("en");
@@ -48,7 +48,7 @@ test("if is default is being loaded when locale is invalid", () => {
     LocalizationDefinitions: [mockEnglish, mockPortuguese],
   }));
 
-  const { LocalizationStore } = require("./LocalizationStore");
+  const { LocalizationStore } = require("./index");
   const store = new LocalizationStore({ locale: "ch" });
 
   expect(store.locale).toBe("ch");
@@ -60,7 +60,7 @@ test("if is store will crash if messages is not configured", () => {
     LocalizationDefinitions: [],
   }));
 
-  const { LocalizationStore } = require("./LocalizationStore");
+  const { LocalizationStore } = require("./index");
   const test = () => new LocalizationStore({ locale: "ch" });
 
   expect(test).toThrow();

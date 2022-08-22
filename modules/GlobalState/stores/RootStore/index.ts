@@ -1,4 +1,4 @@
-import { LocalizationStore } from "./LocalizationStore";
+import { LocalizationStore } from "../LocalizationStore";
 
 export class RootStore {
   localizationStore: LocalizationStore;
