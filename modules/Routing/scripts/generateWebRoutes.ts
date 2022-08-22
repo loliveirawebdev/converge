@@ -1,4 +1,5 @@
 import fs from "fs";
+import path from "path";
 import { RoutesDefinition } from "../config/routes.web";
 
 const normalizeUrl = (url: string) => {
@@ -15,4 +16,7 @@ const routes = RoutesDefinition.map((route) => {
   };
 });
 
-routes.forEach((route) => fs.writeFileSync(route.filename, route.module));
+routes.forEach((route) => {
+  fs.mkdirSync(path.dirname(route.filename), { recursive: true });
+  fs.writeFileSync(route.filename, route.module);
+});

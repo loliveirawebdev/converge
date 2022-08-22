@@ -1,7 +1,13 @@
 import fs from "fs";
+import path from "path";
 
 jest.mock("fs", () => ({
   writeFileSync: jest.fn(),
+  mkdirSync: jest.fn(),
+}));
+
+jest.mock("path", () => ({
+  dirname: jest.fn().mockImplementation((path) => path),
 }));
 
 jest.mock("../config/routes.web", () => ({
@@ -46,4 +52,14 @@ test("if generate files correctly", () => {
   expect(fs.writeFileSync).toBeCalledWith(fooInput.filename, fooInput.module);
   expect(fs.writeFileSync).toBeCalledWith(barInput.filename, barInput.module);
   expect(fs.writeFileSync).toBeCalledWith(bazInput.filename, bazInput.module);
+
+  expect(path.dirname).toBeCalledTimes(3);
+  expect(path.dirname).toBeCalledWith(fooInput.filename);
+  expect(path.dirname).toBeCalledWith(barInput.filename);
+  expect(path.dirname).toBeCalledWith(bazInput.filename);
+
+  expect(fs.mkdirSync).toBeCalledTimes(3);
+  expect(fs.mkdirSync).toBeCalledWith(fooInput.filename, { recursive: true });
+  expect(fs.mkdirSync).toBeCalledWith(barInput.filename, { recursive: true });
+  expect(fs.mkdirSync).toBeCalledWith(bazInput.filename, { recursive: true });
 });
