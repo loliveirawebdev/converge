@@ -8,6 +8,7 @@ export const MixedRoutes: Routing.Route[] = [
   {
     url: "/home",
     name: "Home",
+    mobileTab: true,
     componentPath: "@/modules/Home",
   },
 ];

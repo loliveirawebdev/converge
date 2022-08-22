@@ -4,5 +4,6 @@ declare namespace Routing {
     url?: string;
     index?: boolean;
     componentPath?: string;
+    mobileTab?: boolean;
   };
 }
