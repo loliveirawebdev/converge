@@ -10,6 +10,7 @@ if (NPM_TRIGGER !== STORYBOOK_SCRIPT) {
       ["@babel/plugin-proposal-private-methods", { loose: false }],
       ["@babel/plugin-proposal-private-property-in-object", { loose: false }],
       ["module-resolver", { alias: { "@": "./" } }],
+      ["styled-components", { ssr: true }],
     ],
   };
 }
