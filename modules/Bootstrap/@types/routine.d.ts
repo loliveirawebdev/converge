@@ -3,4 +3,9 @@ declare namespace Bootstrap {
     name: string;
     action: (context: any, ...args: any) => void;
   }
+
+  interface RoutineResult {
+    name: string;
+    payload: any;
+  }
 }

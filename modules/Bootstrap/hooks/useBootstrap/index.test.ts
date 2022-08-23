@@ -37,19 +37,6 @@ jest.mock("../../routines/flow.json", () => ({
   onErrorRoutine: "mockRoutine5",
 }));
 
-// mock routing
-jest.mock("@/modules/Routing", () => {
-  const useNavigation = jest.fn().mockReturnValue({
-    __esModule: true,
-    navigate: jest.fn(),
-  });
-
-  return {
-    __esModule: true,
-    useNavigation,
-  };
-});
-
 test("if the flow work as expected (sync and async)", async () => {
   // run boostrap action
   const { useBootstrap } = require("./index");

@@ -4,8 +4,7 @@
 const routine: Bootstrap.Routine = {
   name: "moveForward",
   action: (context) => {
-    const { globalState } = context;
-    const { bootstrapStore } = globalState;
+    const { bootstrapStore } = context;
     bootstrapStore.setIsInitialized();
   },
 };

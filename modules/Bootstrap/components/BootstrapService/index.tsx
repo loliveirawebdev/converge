@@ -1,20 +1,22 @@
-import React from "react";
+import { useEffect } from "react";
 import { observer } from "mobx-react";
-import { useGlobalState } from "@/modules/GlobalState";
 import { useBootstrap } from "../../hooks/useBootstrap";
 
 const BootstrapService = (props: any) => {
-  const { run } = useBootstrap();
-  const { bootstrapStore } = useGlobalState();
-  const { isInitialized } = bootstrapStore;
+  const { run, bootstrapStore } = useBootstrap();
+  const { isInitialized, error } = bootstrapStore;
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isInitialized) {
       run();
     }
   }, [isInitialized]);
 
   if (!isInitialized) {
+    return null;
+  }
+
+  if (error) {
     return null;
   }
 

@@ -1,16 +1,14 @@
 import routines from "../../routines";
 import flowConfig from "../../routines/flow.json";
-import { useNavigation } from "@/modules/Routing";
-import { useGlobalState } from "@/modules/GlobalState";
 import { findRoutine } from "../../helpers/findRoutine";
+import { BootstrapStore } from "../../stores/BootstrapStore";
 
 export function useBootstrap() {
-  const navigation = useNavigation();
-  const globalState = useGlobalState();
+  const bootstrapStore = BootstrapStore.getInstance();
 
   const run = async () => {
+    const ctx = { bootstrapStore };
     const { flow, onErrorRoutine } = flowConfig as any;
-    const ctx = { navigation, globalState };
 
     try {
       for (const flowItem of flow) {
@@ -28,7 +26,9 @@ export function useBootstrap() {
       const onError = findRoutine(routines, onErrorRoutine);
       onError.action(ctx, error);
     }
+
+    return bootstrapStore;
   };
 
-  return { run };
+  return { run, bootstrapStore };
 }

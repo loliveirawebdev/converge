@@ -8,10 +8,24 @@ test("if routine name is not changed", () => {
 
 test("if throws an error if the context is invalid", () => {
   const { action } = onError;
-  const invalidContextCases = [{}, { navigation: null }, { navigation: {} }];
+
+  const invalidContextCases = [
+    {},
+    { bootstrapStore: null },
+    { bootstrapStore: {} },
+  ];
 
   for (const contextCase of invalidContextCases) {
     const test = () => action(contextCase);
     expect(test).toThrowError();
   }
+});
+
+test("if is filling error as true", () => {
+  const { action } = onError;
+  const bootstrapStore = { setError: jest.fn() };
+  action({ bootstrapStore });
+
+  const { setError } = bootstrapStore;
+  expect(setError).toBeCalledTimes(1);
 });

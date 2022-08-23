@@ -1,8 +1,8 @@
 const routine: Bootstrap.Routine = {
   name: "onError",
   action: (context) => {
-    const { navigation } = context;
-    navigation.navigate({ to: "Sorry", reset: true });
+    const { bootstrapStore } = context;
+    bootstrapStore.setError();
   },
 };
 

@@ -13,8 +13,8 @@ test("if throws an error if the context is invalid", () => {
 
   const invalidContextCases = [
     {},
-    { globalState: null },
-    { globalState: { bootstrapStore: null } },
+    { bootstrapStore: null },
+    { bootstrapStore: {} },
   ];
 
   for (const contextCase of invalidContextCases) {
@@ -23,14 +23,14 @@ test("if throws an error if the context is invalid", () => {
   }
 });
 
-test("if is moving to Home when platform is web", () => {
+test("if is filling initialized as true", () => {
   jest.mock("react-native", () => ({ Platform: { OS: "web" } }));
 
   const { action } = require("./moveForward").default;
-  const globalState = { bootstrapStore: { setIsInitialized: jest.fn() } };
-  action({ globalState });
+  const bootstrapStore = { setIsInitialized: jest.fn() };
+  action({ bootstrapStore });
 
-  const { setIsInitialized } = globalState.bootstrapStore;
+  const { setIsInitialized } = bootstrapStore;
   expect(setIsInitialized).toBeCalledTimes(1);
 });
 
