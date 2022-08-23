@@ -1,4 +1,5 @@
 import React from "react";
+import { View, Text } from "react-native";
 import { useBootstrap } from "../../hooks/useBootstrap";
 
 export default function Trigger() {
@@ -8,5 +9,9 @@ export default function Trigger() {
     run();
   }, []);
 
-  return null;
+  return (
+    <View>
+      <Text>loading...</Text>
+    </View>
+  );
 }
