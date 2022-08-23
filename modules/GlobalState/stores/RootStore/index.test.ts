@@ -22,5 +22,5 @@ test("if stores are being created correctly", () => {
   const rootStore = new RootStore(CONTEXT);
   const childStoresCount = Object.entries(rootStore).length;
   expect(rootStore.localizationStore).toBe(mockLocalizationStore);
-  expect(childStoresCount).toBe(2); // force throw when adds another store
+  expect(childStoresCount).toBe(1); // force throw when adds another store
 });
