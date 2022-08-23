@@ -8,21 +8,21 @@ const MockTabScreen = ({ children }: any) => children || null;
 const MockStackNavigator = ({ children }: any) => children || null;
 const MockStackScreen = ({ children }: any) => children || null;
 
-jest.mock("./hooks/useStack", () => ({
+jest.mock("../../hooks/useStack", () => ({
   useStack: jest.fn().mockReturnValue({
     Navigator: MockStackNavigator,
     Screen: MockStackScreen,
   }),
 }));
 
-jest.mock("./hooks/useTabStack", () => ({
+jest.mock("../../hooks/useTabStack", () => ({
   useTabStack: jest.fn().mockReturnValue({
     Navigator: MockTabNavigator,
     Screen: MockTabScreen,
   }),
 }));
 
-jest.mock("./hooks/useMobileRoutes", () => ({
+jest.mock("../../hooks/useMobileRoutes", () => ({
   useMobileRoutes: jest.fn().mockReturnValue({
     initialRoute: "Home",
     routes: [

@@ -1,7 +1,7 @@
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-import { RoutesDefinition } from "../../../../config/routes";
+import { RoutesDefinition } from "../../config/routes";
 import { getModuleByName } from "../../helpers/getModuleByName";
 
 const mapDefinition = (Screen: any, options?: any) => {
@@ -23,7 +23,6 @@ const mapDefinition = (Screen: any, options?: any) => {
 export function useMobileRoutes(stack: any, tab: any) {
   const { Screen: TabScreen } = tab;
   const { Screen: StackScreen } = stack;
-  const initialRoute = RoutesDefinition.find((route) => route.index);
 
   // mock tabbaricon
   const mockOptions = { tabBarIcon: () => <Icon name="home" /> };
@@ -33,9 +32,13 @@ export function useMobileRoutes(stack: any, tab: any) {
   const tabs = tabDefs.map(mapDefinition(TabScreen, mockOptions));
   const routes = stackDefs.map(mapDefinition(StackScreen));
 
+  const initialRoute = stackDefs.find((route) => route.index);
+  const initialTabRoute = tabDefs.find((route) => route.index);
+
   return {
     tabs,
     routes,
-    initialRoute: initialRoute?.name,
+    initialRoute: initialRoute?.name || "TabNavigation",
+    initialTabRoute: initialTabRoute?.name,
   };
 }

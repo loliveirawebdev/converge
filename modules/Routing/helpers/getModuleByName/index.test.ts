@@ -1,5 +1,5 @@
 import { ModulesInstances } from "@/modules/instances";
-import { getModuleByName } from "./getModuleByName";
+import { getModuleByName } from "./index";
 
 jest.mock("@/modules/instances", () => ({
   ModulesInstances: [{ name: "Foo", module: jest.fn() }],
