@@ -8,15 +8,15 @@ import "react-native-reanimated";
 
 export default function App(props: any) {
   return (
-    <GlobalState>
-      <LocalizationService>
-        <ErrorBoundary>
-          <BootstrapService>
+    <BootstrapService>
+      <GlobalState>
+        <LocalizationService>
+          <ErrorBoundary>
             <RoutingSystem />
             {props.children}
-          </BootstrapService>
-        </ErrorBoundary>
-      </LocalizationService>
-    </GlobalState>
+          </ErrorBoundary>
+        </LocalizationService>
+      </GlobalState>
+    </BootstrapService>
   );
 }
