@@ -23,7 +23,7 @@ const mockRoutine4: Bootstrap.Routine = { name: "mockRoutine4", action: actR4 };
 const mockRoutine5: Bootstrap.Routine = { name: "mockRoutine5", action: actR5 };
 
 // mock routines
-jest.mock("../routines", () => [
+jest.mock("../../routines", () => [
   mockRoutine1,
   mockRoutine2,
   mockRoutine3,
@@ -32,7 +32,7 @@ jest.mock("../routines", () => [
 ]);
 
 // mock flow
-jest.mock("../routines/flow.json", () => ({
+jest.mock("../../routines/flow.json", () => ({
   flow: ["mockRoutine1", ["mockRoutine4", "mockRoutine2"], "mockRoutine3"],
   onErrorRoutine: "mockRoutine5",
 }));
@@ -52,7 +52,7 @@ jest.mock("@/modules/Routing", () => {
 
 test("if the flow work as expected (sync and async)", async () => {
   // run boostrap action
-  const { useBootstrap } = require("./useBootstrap");
+  const { useBootstrap } = require("./index");
   const { result } = renderHook(() => useBootstrap());
   await act(async () => await result.current.run());
 
@@ -81,7 +81,7 @@ test("if onError is triggered when something is wrong", async () => {
   });
 
   // run boostrap action
-  const { useBootstrap } = require("./useBootstrap");
+  const { useBootstrap } = require("./index");
   const { result } = renderHook(() => useBootstrap());
   await act(async () => await result.current.run());
 

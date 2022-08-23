@@ -3,7 +3,7 @@ export const MixedRoutes: Routing.Route[] = [
     url: "/",
     index: true,
     name: "Bootstrap",
-    componentPath: "@/modules/Bootstrap/pages/Trigger",
+    componentPath: "@/modules/Bootstrap/components/Trigger",
   },
   {
     url: "/home",
