@@ -1,17 +1,24 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { observer } from "mobx-react";
+import { useGlobalState } from "@/modules/GlobalState";
 import { useBootstrap } from "../../hooks/useBootstrap";
 
-export default function Trigger() {
+const BootstrapService = (props: any) => {
   const { run } = useBootstrap();
+  const { bootstrapStore } = useGlobalState();
+  const { isInitialized } = bootstrapStore;
 
   React.useEffect(() => {
-    run();
-  }, []);
+    if (!isInitialized) {
+      run();
+    }
+  }, [isInitialized]);
 
-  return (
-    <View>
-      <Text>loading...</Text>
-    </View>
-  );
-}
+  if (!isInitialized) {
+    return null;
+  }
+
+  return props.children;
+};
+
+export default observer(BootstrapService);

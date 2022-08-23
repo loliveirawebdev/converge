@@ -1,14 +1,16 @@
 import routines from "../../routines";
 import flowConfig from "../../routines/flow.json";
 import { useNavigation } from "@/modules/Routing";
+import { useGlobalState } from "@/modules/GlobalState";
 import { findRoutine } from "../../helpers/findRoutine";
 
 export function useBootstrap() {
   const navigation = useNavigation();
+  const globalState = useGlobalState();
 
   const run = async () => {
     const { flow, onErrorRoutine } = flowConfig as any;
-    const ctx = { navigation };
+    const ctx = { navigation, globalState };
 
     try {
       for (const flowItem of flow) {

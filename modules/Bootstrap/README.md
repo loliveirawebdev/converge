@@ -1,6 +1,8 @@
 # Bootstrap Module
 
-This module will concentrate every rule or functionality that the system depends of, like: plugins, authentication flows, etc.
+This module will concentrate every rule or functionality that the system depends of, like: plugins setup, authentication flows, etc.
+The system will run this module before any interaction, independent of page that the user is visiting
+
 Any global wrapper component MUST be placed in App module.
 
 ### Routines

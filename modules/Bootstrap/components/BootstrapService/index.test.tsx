@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import React from "react";
-import Bootstrap from "./index";
-import { useBootstrap } from "../../hooks/useBootstrap";
 import { create, act } from "react-test-renderer";
+import { useBootstrap } from "../../hooks/useBootstrap";
 
 jest.mock("../../hooks/useBootstrap", () => {
   const useBootstrap = jest.fn().mockReturnValue({
@@ -16,9 +16,14 @@ jest.mock("../../hooks/useBootstrap", () => {
 });
 
 test("if it trigger the 'run' function correctly", async () => {
-  act(() => {
-    create(<Bootstrap />);
-  });
+  jest.mock("@/modules/GlobalState", () => ({
+    useGlobalState: jest.fn().mockReturnValue({
+      bootstrapStore: { isInitialized: false },
+    }),
+  }));
+
+  const Bootstrap = require("./index").default;
+  await act(async () => create(<Bootstrap>{null}</Bootstrap>));
 
   const { run } = useBootstrap();
   expect(run).toBeCalledTimes(1);
